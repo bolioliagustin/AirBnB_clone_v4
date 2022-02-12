@@ -1,11 +1,16 @@
 document.addEventListener("DOMContentLoaded", ready);
-$( function () {
-    $(checkbox).prop(true)( function () {
-        var id = amenity_id;
-    })
-    $(checkbox).prop(false)( function () {
-        var id = none
+
+const array = []
+const i = {}
+
+$('input[type="checkbox"]').click(function () {
+    if ($(this).prop('checked') === true) {
+      i[$(this).data('id')] = $(this).data('name');
+      arr.push($(this).data('name'));
     }
-    
-    )
-})
+    if ($(this).prop('checked') === false) {
+      delete i[$(this).data('id')];
+      arr.splice($.inArray($(this).data('name'), arr), 1);
+    }
+    $('body > div > section.filters > div.amenities > h4').text(arr.join(', '));
+  });
