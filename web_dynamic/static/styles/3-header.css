@@ -18,3 +18,6 @@ header #api_status{
     right: 30px;
     vertical-align: middle;
 }
+header .available {
+    background-color: #ff545f;
+}
